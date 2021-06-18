@@ -1,3 +1,19 @@
-<p>
-  city-forecast works!
-</p>
+<p>city-forecast works!</p>
+
+<ng-container *ngIf="cityForecast$ | async as cityForecast">
+  {{ cityForecast.city.name }}
+
+  {{ cityForecast.city.country }}
+
+  <div *ngFor="let prediction of cityForecast.list">
+    {{ prediction.dt_txt }}
+
+    {{ prediction.main.temp_min }}
+
+    {{ prediction.main.temp_max }}
+
+  </div>
+
+
+
+</ng-container>

@@ -1,9 +1,12 @@
 
-<p>lets</p>
+<h1>My Weather Forecast</h1>
 <router-outlet></router-outlet>
 <nav>
   <ul>
-    <li><a routerLink="/city" routerLinkActive="active">First Component</a></li>
+    <li><a [routerLink]="['city']" [queryParams]="{ name: 'Amsterdam'}">
+      Amsterdam
+    </a>
+  </li>
     <li><a routerLink="/" routerLinkActive="active">Second Component</a></li>
   </ul>
 </nav>

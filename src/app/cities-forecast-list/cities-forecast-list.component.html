@@ -1,0 +1,13 @@
+<p>cities-forecast-list works!</p>
+
+<ng-container *ngIf="citiesForecast$ | async as citiesForecast">
+  <div *ngFor="let locationForecast of citiesForecast">
+    {{ locationForecast.name }}
+
+    {{ locationForecast.main.temp }}
+
+    {{ locationForecast.wind.speed }}
+
+
+  </div>
+</ng-container>
