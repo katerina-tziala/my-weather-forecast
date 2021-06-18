@@ -1,12 +1,20 @@
-
-<h1>My Weather Forecast</h1>
-<router-outlet></router-outlet>
-<nav>
-  <ul>
-    <li><a [routerLink]="['city']" [queryParams]="{ name: 'Amsterdam'}">
-      Amsterdam
-    </a>
-  </li>
-    <li><a routerLink="/" routerLinkActive="active">Second Component</a></li>
-  </ul>
-</nav>
+<div class="flex flex-col h-screen">
+  <h1
+    class="
+      bg-gradient-to-r
+      from-blue-800
+      to-blue-400
+      p-3
+      shadow
+      text-white
+      font-semibold
+      text-xl
+      flex-grow-0
+    "
+  >
+    <a href="" [routerLink]="['weather-forecast']">Weather Forecast</a>
+  </h1>
+  <div class="flex-grow bg-blue-50 overflow-y-auto">
+    <router-outlet></router-outlet>
+  </div>
+</div>

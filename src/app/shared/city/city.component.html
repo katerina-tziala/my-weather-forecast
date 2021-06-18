@@ -1,0 +1,9 @@
+<div
+  class="city-background"
+  [style.background-image]="'url(assets/img/' + name + '.jpg)'"
+>
+  <h2 class="absolute z-10 bottom-0 w-full text-3xl font-semibold p-3">
+    <span>{{ name }}</span
+    ><span *ngIf="!!country">, {{ country }}</span>
+  </h2>
+</div>

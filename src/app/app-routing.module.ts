@@ -4,7 +4,7 @@ import { CitiesForecastListComponent } from './cities-forecast-list/cities-forec
 import { CityForecastComponent } from './city-forecast/city-forecast.component';
 
 const routes: Routes = [
-  { path: 'city', component: CityForecastComponent },
+  { path: 'weather-forecast/city', component: CityForecastComponent },
   { path: 'weather-forecast', component: CitiesForecastListComponent },
   { path: '', redirectTo: 'weather-forecast', pathMatch: 'full' }, // redirect to
 ];

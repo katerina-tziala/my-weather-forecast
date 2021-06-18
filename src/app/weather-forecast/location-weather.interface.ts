@@ -1,6 +1,6 @@
 export interface Volume {
-  '1h': Number;
-  '3h': Number;
+  '1h': number;
+  '3h': number;
 }
 
 export interface PartOfTheDay {
@@ -8,34 +8,34 @@ export interface PartOfTheDay {
 }
 
 export interface Wind {
-  speed: Number;
-  deg: Number;
-  gust?: Number;
+  speed: number;
+  deg: number;
+  gust?: number;
 }
 
 export interface Coordinates {
-  lon: Number;
-  lat: Number;
+  lon: number;
+  lat: number;
 }
 
 export interface Clouds {
-  all: Number;
+  all: number;
 }
 
 export interface Weather {
-  temp: Number;
-  feels_like: Number;
-  temp_min: Number;
-  temp_max: Number;
-  humidity: Number;
-  pressure: Number;
-  grnd_level?: Number;
-  temp_kf?: Number;
-  sea_level?: Number;
+  temp: number;
+  feels_like: number;
+  temp_min: number;
+  temp_max: number;
+  humidity: number;
+  pressure: number;
+  grnd_level?: number;
+  temp_kf?: number;
+  sea_level?: number;
 }
 
-export interface WeatherCondition {
-  id: Number;
+export interface WeatherDescription {
+  id: number;
   description: string;
   main: string;
   icon: string;
@@ -43,37 +43,38 @@ export interface WeatherCondition {
 
 export interface Region {
   country: string;
-  sunrise: Number;
-  sunset: Number;
-  timezone: Number;
+  sunrise: number;
+  sunset: number;
+  timezone: number;
 }
 
 export interface City extends Region {
-  id: Number;
+  id: number;
   name: string;
-  population: Number;
+  population: number;
   coord: Coordinates;
 }
 
 export interface WeatherForecast {
-  dt: Number;
-  visibility: Number;
+  dt: number;
+  visibility: number;
   main: Weather;
   wind: Wind;
   clouds: Clouds;
   rain?: Volume;
   snow?: Volume;
-  weather: WeatherCondition[];
+  weather: WeatherDescription[];
 }
 
 export interface CityListItemForecast extends WeatherForecast {
   dt_txt: String;
-  pop: Number;
+  pop: number;
   sys: PartOfTheDay;
+  time?: String;
 }
 
 export interface LocationWeather extends WeatherForecast {
-  id: Number;
+  id: number;
   name: string;
   coord: Coordinates;
   sys: Region;
@@ -81,5 +82,11 @@ export interface LocationWeather extends WeatherForecast {
 
 export interface CityForecast {
   city: City;
-  list: CityListItemForecast[];
+  list?: CityListItemForecast[];
+  weatherForecast?: DailyForecast[];
+}
+
+export interface DailyForecast {
+  date: Date;
+  forecast: CityListItemForecast[];
 }

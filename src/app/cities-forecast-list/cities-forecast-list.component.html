@@ -1,13 +1,33 @@
-<p>cities-forecast-list works!</p>
-
-<ng-container *ngIf="citiesForecast$ | async as citiesForecast">
-  <div *ngFor="let locationForecast of citiesForecast">
-    {{ locationForecast.name }}
-
-    {{ locationForecast.main.temp }}
-
-    {{ locationForecast.wind.speed }}
-
-
-  </div>
-</ng-container>
+<ul
+  *ngIf="citiesForecast$ | async as citiesForecast"
+  class="flex flex-col justify-center items-center"
+>
+  <li
+    *ngFor="let locationForecast of citiesForecast"
+    class="
+      city-forecast
+      bg-white
+      rounded
+      overflow-hidden
+      text-white
+      shadow-lg
+      m-5
+    "
+  >
+    <a
+      href=""
+      [routerLink]="['city']"
+      [queryParams]="{ name: locationForecast.name }"
+      class="flex h-full w-full flex-col sm:flex-row cursor-pointer"
+    >
+      <app-city
+        class="flex-grow w-full city-info-container"
+        [name]="locationForecast.name"
+      ></app-city>
+      <app-weather-overview
+        class="flex-grow h-full city-info-container"
+        [weatherOverview]="locationForecast"
+      ></app-weather-overview>
+    </a>
+  </li>
+</ul>

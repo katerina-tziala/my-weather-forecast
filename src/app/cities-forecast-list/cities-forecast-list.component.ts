@@ -1,8 +1,8 @@
 import { WeatherForecastService } from './../weather-forecast/weather-forecast.service';
 import { Component } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { LocationWeather } from '../weather-forecast/location-weather.interface';
-import { switchMap } from 'rxjs/operators';
+import { catchError, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-cities-forecast-list',
@@ -10,6 +10,7 @@ import { switchMap } from 'rxjs/operators';
   styleUrls: ['./cities-forecast-list.component.scss'],
 })
 export class CitiesForecastListComponent {
+  //TODO: allow user to select the cities
   private selectedCities$: BehaviorSubject<string[]> = new BehaviorSubject([
     '2759794',
     '8133841',
@@ -21,12 +22,11 @@ export class CitiesForecastListComponent {
   public citiesForecast$: Observable<LocationWeather[]>;
 
   constructor(private weatherForecast: WeatherForecastService) {
-    // TODO: ERROR HANDLING
     this.citiesForecast$ = this.selectedCities$.pipe(
       switchMap((selectedCities) =>
         this.weatherForecast.getWeatherForCities(selectedCities)
-      )
+      ),
+      catchError((_) => of([]))
     );
   }
-
 }

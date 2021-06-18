@@ -1,0 +1,21 @@
+<div *ngIf="!!weather" class="h-full flex flex-col justify-around">
+  <p class="text-center text-5xl relative">
+    <app-temperature [temperature]="weather.temp"></app-temperature>
+  </p>
+  <p
+    *ngIf="includeRange"
+    class="
+      flex
+      justify-around
+      items-center
+      text-basic
+      relativetext-center
+      text-base
+      pt-2
+    "
+  >
+    <app-temperature [temperature]="weather.temp_min"></app-temperature>
+    <span class="inline-block">-</span>
+    <app-temperature [temperature]="weather.temp_max"></app-temperature>
+  </p>
+</div>

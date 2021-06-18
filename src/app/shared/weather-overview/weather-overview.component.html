@@ -1,0 +1,23 @@
+<ng-container *ngIf="!!weatherOverview">
+  <div
+    class="
+      h-full
+      flex
+      justify-around
+      items-center
+      bg-gradient-to-r
+      from-blue-800
+      to-blue-400
+      text-white
+    "
+  >
+    <app-weather-temperature
+      [weather]="weatherOverview.main"
+      [includeRange]="includeRange"
+    ></app-weather-temperature>
+    <app-weather-description
+      [weatherDescription]="weatherOverview.weather"
+    ></app-weather-description>
+    <app-wind [wind]="weatherOverview.wind"></app-wind>
+  </div>
+</ng-container>
