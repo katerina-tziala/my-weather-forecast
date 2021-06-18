@@ -1,7 +1,7 @@
 const express = require('express');
 
 const app = express();
-const path = '/dist/my-weather-forecast';
+const path = '/dist/app/';
 app.use(express.static(`.${path}`));
 
 app.get('/*', function (req, res) {
