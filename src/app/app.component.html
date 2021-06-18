@@ -1,4 +1,4 @@
-<div class="flex flex-col h-screen w-screen bg-blue-50">
+<div class="flex flex-col h-full w-full bg-blue-50">
   <h1
     class="
       bg-gradient-to-r
@@ -13,7 +13,7 @@
   >
     <a href="" [routerLink]="['weather-forecast']">Weather Forecast</a>
   </h1>
-  <div class="flex-grow overflow-y-auto">
+  <div class="flex-grow overflow-y-auto p-2">
     <router-outlet></router-outlet>
   </div>
 </div>
