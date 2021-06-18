@@ -1,20 +1,19 @@
-<div class="flex flex-col h-screen">
+<div class="flex flex-col h-screen bg-blue-50 ">
   <h1
     class="
       bg-gradient-to-r
       from-blue-800
       to-blue-400
       p-3
-      shadow
       text-white
       font-semibold
       text-xl
-      flex-grow-0
+      shadow-lg
     "
   >
     <a href="" [routerLink]="['weather-forecast']">Weather Forecast</a>
   </h1>
-  <div class="flex-grow bg-blue-50 overflow-y-auto">
+  <div class="flex-grow overflow-y-auto">
     <router-outlet></router-outlet>
   </div>
 </div>

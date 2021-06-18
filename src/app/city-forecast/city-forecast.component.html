@@ -4,37 +4,39 @@
     [name]="cityForecast.city.name"
     [country]="cityForecast.city.country"
   ></app-city>
-  <div
-    *ngFor="let dailyPrediction of cityForecast.weatherForecast"
-    class="bg-white shadow-lg rounded overflow-hidden p-4 m-4"
-  >
-    <h2 class="text-2xl uppercase font-bold mb-4 text-blue-800">
-      {{ dailyPrediction.date | date: "EEEE, dd-MM-YYYY" }}
-    </h2>
+  <div class="flex flex-wrap justify-center items-center">
     <div
-      *ngFor="let prediction of dailyPrediction.forecast"
-      class="mb-3 flex flex-col sm:flex-row"
+      *ngFor="let dailyPrediction of cityForecast.weatherForecast"
+      class="bg-white shadow-lg rounded overflow-hidden p-4 m-4 daily-forecast"
     >
+      <h2 class="text-2xl uppercase font-bold mb-4 text-blue-800">
+        {{ dailyPrediction.date | date: "EEEE, dd-MM-YYYY" }}
+      </h2>
       <div
-        class="
-          flex
-          justify-center
-          items-center
-          text-xl
-          font-bold
-          text-blue-800
-          p-8
-          border border-blue-800
-        "
+        *ngFor="let prediction of dailyPrediction.forecast"
+        class="mb-3 flex flex-col sm:flex-row"
       >
-        {{ prediction.time }}
-      </div>
+        <div
+          class="
+            flex
+            justify-center
+            items-center
+            text-xl
+            font-bold
+            text-blue-800
+            p-8
+            border border-blue-800
+          "
+        >
+          {{ prediction.time }}
+        </div>
 
-      <app-weather-overview
-        class="flex-grow"
-        [weatherOverview]="prediction"
-        [includeRange]="true"
-      ></app-weather-overview>
+        <app-weather-overview
+          class="flex-grow"
+          [weatherOverview]="prediction"
+          [includeRange]="true"
+        ></app-weather-overview>
+      </div>
     </div>
   </div>
 </ng-container>
