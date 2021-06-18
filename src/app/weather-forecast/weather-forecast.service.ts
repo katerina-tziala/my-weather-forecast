@@ -12,7 +12,7 @@ import {
   providedIn: 'root',
 })
 export class WeatherForecastService {
-  private API_BASE = 'http://api.openweathermap.org/data/2.5/';
+  private API_BASE = 'https://api.openweathermap.org/data/2.5/';
   private API_KEY = '&appid=f566b6ca9f9485d189793e74e946268e';
   private WEATHER_UNITS = '&units=metric';
 
