@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
-    "build": "ng build --cross-origin --delete-output-path --index --optimization --resources-output-path --source-map",
+    "build": "ng build --delete-output-path --index --optimization --resources-output-path --source-map",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "heroku-postbuild": "ng build --delete-output-path --index --optimization --resources-output-path --source-map"
