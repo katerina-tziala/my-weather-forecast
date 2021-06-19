@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Wind } from 'src/app/weather-forecast/location-weather.interface';
+import { Wind } from 'src/app/shared/shared-services/weather-forecast/location-weather.interface';
 
 @Component({
   selector: 'app-wind',

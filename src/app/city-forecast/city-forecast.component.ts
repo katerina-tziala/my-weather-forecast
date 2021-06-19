@@ -3,8 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { EMPTY } from 'rxjs';
 import { Observable } from 'rxjs';
 import { catchError, switchMap } from 'rxjs/operators';
-import { CityForecast } from '../weather-forecast/location-weather.interface';
-import { WeatherForecastService } from '../weather-forecast/weather-forecast.service';
+import { CityForecast } from '../shared/shared-services/weather-forecast/location-weather.interface';
+import { WeatherForecastService } from '../shared/shared-services/weather-forecast/weather-forecast.service';
 
 @Component({
   selector: 'app-city-forecast',

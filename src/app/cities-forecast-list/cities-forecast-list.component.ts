@@ -1,7 +1,7 @@
-import { WeatherForecastService } from './../weather-forecast/weather-forecast.service';
+import { WeatherForecastService } from '../shared/shared-services/weather-forecast/weather-forecast.service';
 import { Component } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
-import { LocationWeather } from '../weather-forecast/location-weather.interface';
+import { LocationWeather } from '../shared/shared-services/weather-forecast/location-weather.interface';
 import { catchError, switchMap } from 'rxjs/operators';
 
 @Component({

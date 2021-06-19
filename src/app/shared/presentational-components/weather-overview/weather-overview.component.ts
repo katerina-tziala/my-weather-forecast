@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import {
   CityListItemForecast,
   WeatherForecast,
-} from 'src/app/weather-forecast/location-weather.interface';
+} from 'src/app/shared/shared-services/weather-forecast/location-weather.interface';
 
 @Component({
   selector: 'app-weather-overview',

@@ -1,6 +1,6 @@
 import { Input } from '@angular/core';
 import { Component } from '@angular/core';
-import { Weather } from 'src/app/weather-forecast/location-weather.interface';
+import { Weather } from 'src/app/shared/shared-services/weather-forecast/location-weather.interface';
 
 @Component({
   selector: 'app-weather-temperature',
