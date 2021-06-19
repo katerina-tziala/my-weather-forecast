@@ -2,7 +2,6 @@
 A Single Page Application for displaying the weather forecast utilizing the [OpenWeather API](https://openweathermap.org/api).
 </br>Access the app here: [My Weather Forecast](https://my-weather-forecast-demo.herokuapp.com/).
 
-
 ## Technologies
 Here’s a high level list of the technologies used for this app:
 
@@ -13,7 +12,6 @@ Here’s a high level list of the technologies used for this app:
 * **NodeJS and Express**: For the development of a simple server to serve static files
 
 * **[Heroku](https://www.heroku.com)**: A cloud platform to deploy the app on the internet
-
 
 ## Features
 
@@ -26,7 +24,6 @@ Here’s a high level list of the technologies used for this app:
 - Users can share the link of any page, with a different user. The link navigates the receiving user to the page with correct results displayed, preserving the state of the page
 
 - Responsive Design
-
 
 ## Running the App Locally
 
@@ -53,16 +50,13 @@ Here’s a high level list of the technologies used for this app:
 
 4. Access the app locally at: http://localhost:4200/
 
-
 ## Code Scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`
 
-
 ## Lint
 
 Run `ng lint` to lint the project and enforce the applied coding styles
-
 
 ## Build
 
@@ -73,7 +67,6 @@ To run the app that is ready for production run:
    ```
    npm start
    ```
-
 
 ## App Architecture
 
@@ -86,7 +79,6 @@ The ***shared*** folder includes the code that is shared among the two modules a
   - **presentational-components**: Includes the presentational components (components with the single responsibility to present the data with no logic at all) that are shared among the modules.
   - **cities-forecast-list**: The module to display the list of the selected cities with the current weather overview. Since there are no more features for the weather-forecast route, this module is used as the main module of the route.
   - **city-forecast**: The module to display the weather forecast of the selected city. This module has also an extra presentational component (daily-prediction) which is responsible for displaying the list of the predictions of each day. Since this component is not used elsewhere, it is placed under this folder.
-
 
 ## Future Improvements
 - Implementation of a search field / typeahead dropdown checkbox list, to allow the user to select multiple cities in the *Weather Forecast Page*.
