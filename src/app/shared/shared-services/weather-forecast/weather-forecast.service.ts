@@ -51,7 +51,7 @@ export class WeatherForecastService {
       grouppedByDay.push({ date, forecast });
     }
 
-    return grouppedByDay.slice(0, 4);
+    return grouppedByDay;
   }
 
   private getForecastPerDayMap(

@@ -1,11 +1,72 @@
 # My Weather Forecast
+A Weather Forecast Single Page Application utilizing the [OpenWeather API](https://openweathermap.org/api).
+Access the My Weather Forecast App here: [MY WEATHER FORECAST](https://my-weather-forecast-demo.herokuapp.com/).
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.4.
+## Technologies
+Here’s a high level list of the technologies used for this app:
+
+* **Angular version 12.0.4**:  [Angular CLI](https://github.com/angular/angular-cli) for the development of the frontend.
+
+* **[Tailwind](https://tailwindcss.com/)**: A utility-first CSS framework to create a user friendly and eye appealing interface.
+
+* **NodeJS and Express**: For the development of a simple server to serve static files.
+
+* **[Heroku](https://www.heroku.com)**: A cloud platform to deploy the app on the internet.
+
+## Features
+
+- Wheather Forecast Page
+  In this page the user can see a list of five cities (Amsterddam Thessaloniki, Viewnna, Lisbon, Milan) with the current weather details (temperature and wind speed);
+
+- Wheather Forecast City Page
+  In this page the user can see the weather forecast of a city for the rest of the day and four - five days ahead;
+
+- Users can share the link of any page, with a different user. The link navigates the receiving user to the page with correct results displayed, preserving the state of the page.
+
+- Responsive Design
+
+## Running the App Locally
+
+1. Fork and clone this repository.
+
+2. To install the dependencies of the app, run in this directory:
+
+    ```
+    npm install
+    ```
+
+    or
+
+    ```
+    npm i
+    ```
+    
+
+3. To start the app, run  in the project directory:
+
+    ```
+    ng serve
+    ``` 
+
+4. Access the app locally at: http://localhost:4200/
+
+//////
 
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+
+## Future Improvements
+- Implementation of a search field / typeahead dropdown checkbox list, to allow the user to select multiple cities in the *Weather Forecast Page*.
+
+- Convert it to a PWA app
+  
+  - Implementation of a Manifest to prompt users install the app when accessing it through their mobiles
+
+  - Implementation of a Service Worker for Offline-First capability and caching static files
+  
+- Unit and End to End Testing.
+
 
 ## Code scaffolding
 
@@ -14,6 +75,8 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+
 
 ## Running unit tests
 
