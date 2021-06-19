@@ -75,7 +75,7 @@ It is also easier that way to extend each module separately, by adding features,
 
 The ***shared*** folder includes the code that is shared among the two modules and has two subfolders:
 
-  - **shared-services**: Includes the services that are shared among the modules. In this case there is only one service, the *"*WeatherForecastService* which is responsible for fetching the data.
+  - **shared-services**: Includes the services that are shared among the modules. In this case there is only one service, the *WeatherForecastService* which is responsible for fetching the data.
   - **presentational-components**: Includes the presentational components (components with the single responsibility to present the data with no logic at all) that are shared among the modules.
   - **cities-forecast-list**: The module to display the list of the selected cities with the current weather overview. Since there are no more features for the weather-forecast route, this module is used as the main module of the route.
   - **city-forecast**: The module to display the weather forecast of the selected city. This module has also an extra presentational component (daily-prediction) which is responsible for displaying the list of the predictions of each day. Since this component is not used elsewhere, it is placed under this folder.
