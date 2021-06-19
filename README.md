@@ -50,6 +50,29 @@ Here’s a high level list of the technologies used for this app:
 
 4. Access the app locally at: http://localhost:4200/
 
+## Code Scaffolding
+
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+## Lint
+
+Run `ng lint` to lint the project.
+
+
+
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+
+
+
+
+
+
+
+
+
 //////
 
 
@@ -67,14 +90,15 @@ Here’s a high level list of the technologies used for this app:
   
 - Unit and End to End Testing.
 
+- Improve, document and implement the eslint rules in order to:
+  
+  - Define the code styling of the project and have clear consistent coding conventions
 
-## Code scaffolding
+  - Maintain the code quality with ease
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Add Git Hooks to enforce and ensure the selected coding conventions and the quality of the app (tests)
+  
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
 
 
