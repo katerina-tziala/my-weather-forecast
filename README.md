@@ -81,7 +81,9 @@ The ***shared*** folder includes the code that is shared among the two modules a
   - **city-forecast**: The module to display the weather forecast of the selected city. This module has also an extra presentational component (daily-prediction) which is responsible for displaying the list of the predictions of each day. Since this component is not used elsewhere, it is placed under this folder.
 
 ## Future Improvements
-- Implementation of a search field / typeahead dropdown checkbox list, to allow the user to select multiple cities in the *Weather Forecast Page*.
+- Add loaders and error messages/notifications to notify user for the state of the app
+
+- Implementation of a search field / typeahead dropdown checkbox list, to allow the user to select multiple cities in the *Weather Forecast Page*
 
 - Convert it to a PWA app
   
