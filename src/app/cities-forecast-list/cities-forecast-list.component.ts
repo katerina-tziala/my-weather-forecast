@@ -10,7 +10,7 @@ import { catchError, switchMap } from 'rxjs/operators';
   styleUrls: ['./cities-forecast-list.component.scss'],
 })
 export class CitiesForecastListComponent {
-  //TODO: allow user to select the cities
+  // TODO: allow user to select the cities and pass their ids
   private selectedCities$: BehaviorSubject<string[]> = new BehaviorSubject([
     '2759794',
     '8133841',
@@ -23,7 +23,7 @@ export class CitiesForecastListComponent {
 
   constructor(private weatherForecast: WeatherForecastService) {
     this.citiesForecast$ = this.selectedCities$.pipe(
-      switchMap((selectedCities) =>
+      switchMap((selectedCities: string[]) =>
         this.weatherForecast.getWeatherForCities(selectedCities)
       ),
       catchError((_) => of([]))

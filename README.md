@@ -2,6 +2,7 @@
 A Weather Forecast Single Page Application utilizing the [OpenWeather API](https://openweathermap.org/api).
 </br>Access the My Weather Forecast App here: [MY WEATHER FORECAST](https://my-weather-forecast-demo.herokuapp.com/).
 
+
 ## Technologies
 Here’s a high level list of the technologies used for this app:
 
@@ -12,6 +13,7 @@ Here’s a high level list of the technologies used for this app:
 * **NodeJS and Express**: For the development of a simple server to serve static files.
 
 * **[Heroku](https://www.heroku.com)**: A cloud platform to deploy the app on the internet.
+
 
 ## Features
 
@@ -24,6 +26,7 @@ Here’s a high level list of the technologies used for this app:
 - Users can share the link of any page, with a different user. The link navigates the receiving user to the page with correct results displayed, preserving the state of the page.
 
 - Responsive Design
+
 
 ## Running the App Locally
 
@@ -50,14 +53,15 @@ Here’s a high level list of the technologies used for this app:
 
 4. Access the app locally at: http://localhost:4200/
 
+
 ## Code Scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
+
 ## Lint
 
 Run `ng lint` to lint the project.
-
 
 
 ## Build
@@ -71,14 +75,17 @@ To run the production build app run:
    ```
 
 
+## App Architecture
 
+This app has two main routes ***weather-forecast*** abd ***weather-forecast/city***. For each route the respective module is loaded when required, thus achieving lazy load.
+It is also easier that way to extend each module separately, by adding features, subroutes, etc.
 
+The ***shared*** folder includes the code that is shared among the two modules and has two subfolders:
 
-
-//////
-
-
-
+  - **shared-services**: Includes the services that are shared among the modules. In this case there is only one service, the *"*WeatherForecastService* which is responsible for fetching the data.
+  - **presentational-components**: Includes the presentational components (components with the single responsibility to present the data with no logic at all) that are shared among the modules.
+  - **cities-forecast-list**: The module to display the list of the selected cities with the current weather overview. Since there are no more features for the weather-forecast route, this module is used as the main module of the route.
+  - **city-forecast**: The module to display the weather forecast of the selected city. This module has also an extra presentational component (daily-prediction) which is responsible for displaying the list of the predictions of each day. Since this component is not used elsewhere, it is placed under this folder.
 
 
 ## Future Improvements
@@ -89,21 +96,18 @@ To run the production build app run:
   - Implementation of a Manifest to prompt users install the app when accessing it through their mobiles
 
   - Implementation of a Service Worker for Offline-First capability and caching static files
-  
-- Unit and End to End Testing.
 
 - Improve, document and implement the eslint rules in order to:
   
   - Define the code styling of the project and have clear consistent coding conventions
 
   - Maintain the code quality with ease
+  
+- Unit and End to End Testing.
 
 - Add Git Hooks to enforce and ensure the selected coding conventions and the quality of the app (tests)
   
-
-
-
-
+//
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
@@ -111,7 +115,3 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
