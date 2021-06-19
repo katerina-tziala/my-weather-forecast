@@ -9,22 +9,9 @@
       *ngFor="let dailyPrediction of cityForecast.weatherForecast"
       class="bg-white shadow-lg rounded overflow-hidden p-2 m-1 sm:p-4 sm:m-4"
     >
-      <h2 class="text-xl uppercase font-bold text-blue-800 mb-2">
-        {{ dailyPrediction.date | date: "EEEE, dd-MM-YYYY" }}
-      </h2>
-      <ul>
-        <li *ngFor="let prediction of dailyPrediction.forecast" class="mt-4">
-          <div class="text-lg uppercase font-semibold text-blue-800 mt-2">
-            {{ dailyPrediction.date | date: "dd-MM-YYYY" }},
-            {{ prediction.time }}
-          </div>
-          <app-weather-overview
-            class="flex-grow"
-            [weatherOverview]="prediction"
-            [includeRange]="true"
-          ></app-weather-overview>
-        </li>
-      </ul>
+      <app-daily-prediction
+        [dailyForecast]="dailyPrediction"
+      ></app-daily-prediction>
     </div>
   </div>
 </ng-container>

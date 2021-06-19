@@ -1,0 +1,18 @@
+<ng-container *ngIf="!!dailyForecast">
+  <h2 class="text-xl uppercase font-bold text-blue-800 mb-2">
+    {{ dailyForecast.date | date: "EEEE, dd-MM-YYYY" }}
+  </h2>
+  <ul>
+    <li *ngFor="let prediction of dailyForecast?.forecast" class="mt-4">
+      <div class="text-lg uppercase font-semibold text-blue-800 mt-2">
+        {{ dailyForecast.date | date: "dd-MM-YYYY" }},
+        {{ prediction.time }}
+      </div>
+      <app-weather-overview
+        class="flex-grow"
+        [weatherOverview]="prediction"
+        [includeRange]="true"
+      ></app-weather-overview>
+    </li>
+  </ul>
+</ng-container>
