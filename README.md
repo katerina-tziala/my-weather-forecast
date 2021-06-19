@@ -67,8 +67,8 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 To run the production build app run:
 
    ```
-    npm start
-    ```
+   npm start
+   ```
 
 
 
