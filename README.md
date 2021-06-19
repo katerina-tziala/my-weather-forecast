@@ -6,31 +6,31 @@ A Single Page Application for displaying the weather forecast utilizing the [Ope
 ## Technologies
 Here’s a high level list of the technologies used for this app:
 
-* **Angular version 12.0.4**:  [Angular CLI](https://github.com/angular/angular-cli) for the development of the frontend.
+* **Angular version 12.0.4**:  [Angular CLI](https://github.com/angular/angular-cli) for the development of the frontend
 
-* **[Tailwind](https://tailwindcss.com/)**: A utility-first CSS framework to create a user friendly and eye appealing interface.
+* **[Tailwind](https://tailwindcss.com/)**: A utility-first CSS framework to create a user friendly and eye appealing interface
 
-* **NodeJS and Express**: For the development of a simple server to serve static files.
+* **NodeJS and Express**: For the development of a simple server to serve static files
 
-* **[Heroku](https://www.heroku.com)**: A cloud platform to deploy the app on the internet.
+* **[Heroku](https://www.heroku.com)**: A cloud platform to deploy the app on the internet
 
 
 ## Features
 
 - Wheather Forecast Page
-  In this page the user can see a list of five cities (Amsterddam Thessaloniki, Viewnna, Lisbon, Milan) with the current weather details (temperature and wind speed);
+  In this page the user can see a list of five cities (Amsterddam Thessaloniki, Viewnna, Lisbon, Milan) with the current weather details (temperature and wind speed)
 
 - Wheather Forecast City Page
-  In this page the user can see the weather forecast of a city for the rest of the day and four - five days ahead;
+  In this page the user can see the weather forecast of a city for the rest of the day and four - five days ahead
 
-- Users can share the link of any page, with a different user. The link navigates the receiving user to the page with correct results displayed, preserving the state of the page.
+- Users can share the link of any page, with a different user. The link navigates the receiving user to the page with correct results displayed, preserving the state of the page
 
 - Responsive Design
 
 
 ## Running the App Locally
 
-1. Fork and clone this repository.
+1. Fork and clone this repository
 
 2. To install the dependencies of the app, run in this directory:
 
@@ -56,19 +56,19 @@ Here’s a high level list of the technologies used for this app:
 
 ## Code Scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`
 
 
 ## Lint
 
-Run `ng lint` to lint the project.
+Run `ng lint` to lint the project and enforce the applied coding styles
 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. The production build of the app is included in the `dist/app` directory.
 
-To run the production build app run:
+To run the app that is ready for production run:
 
    ```
    npm start
@@ -103,11 +103,11 @@ The ***shared*** folder includes the code that is shared among the two modules a
 
   - Maintain the code quality with ease
   
-- Unit and End to End Testing.
+- Unit and End to End Testing
 
 - Add Git Hooks to enforce and ensure the selected coding conventions and the quality of the app (tests)
   
-//
+// 
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
