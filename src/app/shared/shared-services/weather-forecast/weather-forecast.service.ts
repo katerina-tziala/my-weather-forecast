@@ -62,7 +62,7 @@ export class WeatherForecastService {
     list.forEach((forecast) => {
       const [date, time] = forecast.dt_txt.split(' ');
       const day = new Date(date).toISOString();
-      forecast.time = time.split(":").slice(0, 2).join(":");
+      forecast.time = time.split(':').slice(0, 2).join(':');
       const forecastInDay = forecastPerDay.get(day) || [];
       forecastInDay.push(forecast);
       forecastPerDay.set(day, forecastInDay);
