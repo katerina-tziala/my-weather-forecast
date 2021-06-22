@@ -8,7 +8,6 @@ import {
 } from '@angular/common/http/testing';
 import { findCityForecastByName, findWeatherForCities } from './mock-data';
 import { HttpErrorResponse } from '@angular/common/http';
-import { EMPTY } from 'rxjs';
 
 const API_BASE_URL = 'https://api.openweathermap.org/data/2.5';
 const API_KEY = 'f566b6ca9f9485d189793e74e946268e';

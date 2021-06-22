@@ -28,7 +28,7 @@ describe('Presentational Component: TemperatureComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should display zero when input not defined', () => {
+  it('should display zero, when temperature NOT defined', () => {
     fixture.detectChanges();
 
     const temp = el.query(By.css('.temp-value'));
@@ -36,7 +36,7 @@ describe('Presentational Component: TemperatureComponent', () => {
     expect(temp.nativeElement.textContent.trim()).toBe('0');
   });
 
-  it('should display integer when input defined', () => {
+  it('should display integer, when temperature defined', () => {
     component.temperature = 3.2;
     fixture.detectChanges();
 

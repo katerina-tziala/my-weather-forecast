@@ -1,0 +1,30 @@
+.city-weather-list {
+  @apply flex flex-wrap justify-center items-start;
+}
+
+.city-weather-list-item {
+  @apply bg-white rounded  overflow-hidden text-white shadow-lg m-5;
+  width: 100%;
+  max-width: 360px;
+  cursor: pointer;
+  min-width: 280px;
+}
+
+.city-weather-link-wrapper {
+  @apply flex h-full w-full flex-col cursor-pointer;
+}
+
+.city-weather-location {
+  @apply flex-grow w-full;
+  height: 8rem;
+  width: 100%;
+  min-width: 280px;
+}
+
+.empty-cities-list {
+  @apply flex flex-wrap justify-center items-center h-full w-full p-4;
+}
+
+.alert-container {
+  @apply bg-red-100 border border-red-400 text-red-700 p-4 rounded relative;
+}

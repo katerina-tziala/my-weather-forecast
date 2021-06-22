@@ -3,9 +3,9 @@ import { DailyForecast } from 'src/app/shared/shared-services/weather-forecast/l
 
 @Component({
   selector: 'app-daily-prediction',
-  templateUrl: './daily-prediction.component.html',
-  styleUrls: ['./daily-prediction.component.scss']
+  templateUrl: './daily-forecast.component.html',
+  styleUrls: ['./daily-forecast.component.scss']
 })
-export class DailyPredictionComponent {
+export class DailyForecastComponent {
   @Input() public dailyForecast: DailyForecast | null = null;
 }

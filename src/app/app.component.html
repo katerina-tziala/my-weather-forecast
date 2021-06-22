@@ -1,17 +1,19 @@
 <div class="flex flex-col h-full w-full bg-blue-50">
-  <h1
-    class="
-      bg-gradient-to-r
-      from-blue-800
-      to-blue-400
-      p-3
-      text-white
-      font-semibold
-      text-xl
-      shadow-lg
-    "
-  >
-    <a href="" [routerLink]="['weather-forecast']">Weather Forecast</a>
+  <h1 class="header">
+    <div class="inline-block">
+      <a
+        href=""
+        [routerLink]="['weather-forecast']"
+        class="flex justify-start items-center"
+      >
+        <img
+          src="assets/logo/android-chrome-192x192.png"
+          alt="app logo"
+          class="app-logo mr-2"
+        />
+        <div class="inline-block">Weather Forecast</div>
+      </a>
+    </div>
   </h1>
   <div class="flex-grow overflow-y-auto">
     <router-outlet></router-outlet>

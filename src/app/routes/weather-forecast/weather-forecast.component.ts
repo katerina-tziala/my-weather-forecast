@@ -1,15 +1,15 @@
-import { WeatherForecastService } from '../shared/shared-services/weather-forecast/weather-forecast.service';
 import { Component } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
-import { LocationWeather } from '../shared/shared-services/weather-forecast/location-weather.interface';
-import { catchError, switchMap } from 'rxjs/operators';
+import { switchMap, catchError, startWith } from 'rxjs/operators';
+import { LocationWeather } from 'src/app/shared/shared-services/weather-forecast/location-weather.interface';
+import { WeatherForecastService } from 'src/app/shared/shared-services/weather-forecast/weather-forecast.service';
 
 @Component({
-  selector: 'app-cities-forecast-list',
-  templateUrl: './cities-forecast-list.component.html',
-  styleUrls: ['./cities-forecast-list.component.scss'],
+  selector: 'app-weather-forecast',
+  templateUrl: './weather-forecast.component.html',
+  styleUrls: ['./weather-forecast.component.scss']
 })
-export class CitiesForecastListComponent {
+export class WeatherForecastComponent {
   // TODO: allow user to select the cities and pass their ids
   private selectedCities$: BehaviorSubject<number[]> = new BehaviorSubject([
     2759794,
@@ -29,4 +29,5 @@ export class CitiesForecastListComponent {
       catchError((_) => of([]))
     );
   }
+
 }

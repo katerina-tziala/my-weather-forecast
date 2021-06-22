@@ -28,7 +28,7 @@ describe('Presentational Component: WeatherDescriptionComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should not display anything when weather description not defined', () => {
+  it('should NOT display anything, when weather description NOT defined', () => {
     component.weatherDescription = null;
     fixture.detectChanges();
 

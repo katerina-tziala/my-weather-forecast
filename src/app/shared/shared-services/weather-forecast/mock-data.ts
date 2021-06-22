@@ -1,4 +1,10 @@
-import { CityForecast, LocationWeather } from './location-weather.interface';
+import {
+  CityForecast,
+  CityListItemForecast,
+  DailyForecast,
+  LocationWeather,
+  Weather,
+} from './location-weather.interface';
 
 export const CITIES_WEATHER: any = {
   cnt: 5,
@@ -335,6 +341,40 @@ export function findWeatherForCities(citiesIds: number[]): LocationWeather[] {
   );
 }
 
+export function getSampleCitiesList(): LocationWeather[] {
+  return CITIES_WEATHER.list;
+}
+
+export function findWeatherForCityByName(name: string): LocationWeather {
+  return CITIES_WEATHER.list.find(
+    (city: LocationWeather) => city.name === name
+  );
+}
+
 export function findCityForecastByName(cityName: string): CityForecast {
   return CITY_FORECAST[cityName];
+}
+
+export function getWeatherSample(): Weather {
+  return {
+    temp: 13.86,
+    feels_like: 13.31,
+    temp_min: 13.33,
+    temp_max: 14.44,
+    pressure: 1014,
+    humidity: 77,
+  };
+}
+export function getDailyForecastSample(): DailyForecast {
+  const forecast = CITY_FORECAST['Amsterdam'].list.map(
+    (listItem: CityListItemForecast) => {
+      const [_, time] = listItem.dt_txt.split(' ') || [];
+      listItem.time = time.split(':').slice(0, 2).join(':');
+      return listItem;
+    }
+  );
+  return {
+    date: new Date(),
+    forecast,
+  };
 }

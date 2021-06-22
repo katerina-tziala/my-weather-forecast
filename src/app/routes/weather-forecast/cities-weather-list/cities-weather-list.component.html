@@ -1,0 +1,28 @@
+<ul *ngIf="citiesWeather.length; else noCities" class="city-weather-list">
+  <li
+    *ngFor="let locationForecast of citiesWeather"
+    class="city-weather-list-item"
+  >
+    <a
+      [routerLink]="['./city/', locationForecast.name]"
+      class="city-weather-link-wrapper"
+    >
+      <app-city
+        class="city-weather-location"
+        [name]="locationForecast.name"
+      ></app-city>
+      <app-weather-overview
+        class="city-weather-overview"
+        [weatherOverview]="locationForecast"
+      ></app-weather-overview>
+    </a>
+  </li>
+</ul>
+
+<ng-template #noCities>
+  <div class="empty-cities-list">
+    <div class="alert-container" role="alert">
+      <p class="font-bold">No weather data to display!</p>
+    </div>
+  </div>
+</ng-template>

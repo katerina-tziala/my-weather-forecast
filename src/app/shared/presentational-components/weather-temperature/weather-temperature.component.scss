@@ -1,4 +1,7 @@
 :host {
-  display: block;
-  height: 100%;
+  @apply h-full flex flex-col justify-around;
+}
+
+.weather-temparature-range {
+  @apply flex justify-around items-center text-base pt-2;
 }

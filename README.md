@@ -1,17 +1,19 @@
-#  <img src="https://github.com/katerina-tziala/my-weather-forecast/blob/master/logo.png" alt="app logo" width="44" height="44" align="left">My Weather Forecast
+# <img src="https://github.com/katerina-tziala/my-weather-forecast/blob/master/logo.png" alt="app logo" width="44" height="44" align="left">My Weather Forecast
+
 A Single Page Application for displaying the weather forecast utilizing the [OpenWeather API](https://openweathermap.org/api).
 </br>Access the app here: [My Weather Forecast](https://my-weather-forecast-demo.herokuapp.com/).
 
 ## Technologies
+
 Here’s a high level list of the technologies used for this app:
 
-* **Angular version 12.0.4**:  [Angular CLI](https://github.com/angular/angular-cli) for the development of the frontend
+- **Angular version 12.0.4**: [Angular CLI](https://github.com/angular/angular-cli) for the development of the frontend
 
-* **[Tailwind](https://tailwindcss.com/)**: A utility-first CSS framework to create a user friendly and eye appealing interface
+- **[Tailwind](https://tailwindcss.com/)**: A utility-first CSS framework to create a user friendly and eye appealing interface
 
-* **NodeJS and Express**: For the development of a simple server to serve static files
+- **NodeJS and Express**: For the development of a simple server to serve static files
 
-* **[Heroku](https://www.heroku.com)**: A cloud platform to deploy the app on the internet
+- **[Heroku](https://www.heroku.com)**: A cloud platform to deploy the app on the internet
 
 ## Features
 
@@ -31,22 +33,21 @@ Here’s a high level list of the technologies used for this app:
 
 2. To install the dependencies of the app, run in this directory:
 
-    ```
-    npm install
-    ```
+   ```
+   npm install
+   ```
 
-    or
+   or
 
-    ```
-    npm i
-    ```
-    
+   ```
+   npm i
+   ```
 
-3. To start the app, run  in the project directory:
+3. To start the app, run in the project directory:
 
-    ```
-    ng serve
-    ``` 
+   ```
+   ng serve
+   ```
 
 4. Access the app locally at: http://localhost:4200/
 
@@ -64,47 +65,55 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 To run the app that is ready for production run:
 
-   ```
-   npm start
-   ```
+```
+npm start
+```
+
 
 ## App Architecture
 
-This app has two main routes ***weather-forecast*** abd ***weather-forecast/city***. For each route the respective module is loaded when required, thus achieving lazy load.
-It is also easier that way to extend each module separately, by adding features, subroutes, etc.
+This app has two main routes **_weather-forecast_** abd **_weather-forecast/city_**. For each route the respective module is loaded when required, thus achieving lazy load. It is also easier that way to extend each module separately, by adding features, subroutes, etc.
 
-The ***shared*** folder includes the code that is shared among the two modules and has two subfolders:
+The **_shared_** folder includes the code that is shared among the two modules and has two subfolders:
 
-  - **shared-services**: Includes the services that are shared among the modules. In this case there is only one service, the *WeatherForecastService* which is responsible for fetching the data.
-  - **presentational-components**: Includes the presentational components (components with the single responsibility to present the data with no logic at all) that are shared among the modules.
-  - **cities-forecast-list**: The module to display the list of the selected cities with the current weather overview. Since there are no more features for the weather-forecast route, this module is used as the main module of the route.
-  - **city-forecast**: The module to display the weather forecast of the selected city. This module has also an extra presentational component (daily-prediction) which is responsible for displaying the list of the predictions of each day. Since this component is not used elsewhere, it is placed under this folder.
+- **shared-services**: Includes the services that are shared among the modules. In this case there is only one service, the _WeatherForecastService_ which is responsible for fetching the data.
+- **presentational-components**: Includes the presentational components (components with the single responsibility to present the data with no logic at all) that are shared among the modules.
+
+The **_routes_** folder includes the modules for the routes f the app:
+
+- **weather forecast**: The module to display the list of the selected cities with the current weather overview.This module is used as the main module of the app.
+- **city-forecast**: The module to display the weather forecast of the selected city. This module has also an extra presentational component (daily-forecast) which is responsible for displaying the list of the weather forecast of each day. Since this component is not used elsewhere, it is placed under this folder.
+
 
 ## Future Improvements
+
 - Add loaders and error messages/notifications to notify user for the state of the app
 
-- Implementation of a search field / typeahead dropdown checkbox list, to allow the user to select multiple cities in the *Weather Forecast Page*
+- Implementation of a search field/typeahead dropdown checkbox list, to allow the user to select multiple cities in the _Weather Forecast Page_
 
-- Implementation of a dropdown select to allow the user select the preferable units of measurement  for the weather data (Celsius, Fahrenheit, Kelvin).
+- Implementation of a dropdown select, to allow the user select the preferable units of measurement for the weather data (Celsius, Fahrenheit, Kelvin).
 
-- Convert it to a PWA app
-  
-  - Implementation of a Manifest to prompt users install the app when accessing it through their mobiles
+- Implementation of a Service Worker for Offline-First capability and caching static files
 
-  - Implementation of a Service Worker for Offline-First capability and caching static files
+- Configuration of the app theming
 
 - Improve, document and implement the eslint rules in order to:
-  
+
   - Define the code styling of the project and have clear consistent coding conventions
 
   - Maintain the code quality with ease
-  
+
 - Unit and End to End Testing
 
 - Add Git Hooks to enforce and ensure the selected coding conventions and the quality of the app (tests)
-  
+
+
+
+
 // es lint rules
-// city, weather overview, city forecast, daily prediction, city forecast list, loaders, error messages, manifest, app component routing
+
+//city forecast
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).

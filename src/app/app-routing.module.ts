@@ -3,21 +3,25 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: '', redirectTo: 'weather-forecast', pathMatch: 'full' }, // redirect to
-  { path: 'weather-forecast',  loadChildren: () =>
-  import('./cities-forecast-list/cities-forecast-list.module').then(
-    (m) => m.CitiesForecastListModule
-  ), },
   {
-    path: 'weather-forecast/city',
+    path: 'weather-forecast',
     loadChildren: () =>
-      import('./city-forecast/city-forecast.module').then(
+      import('./routes/weather-forecast/weather-forecast.module').then(
+        (m) => m.WeatherForecastModule
+      ),
+  },
+  {
+    path: 'weather-forecast/city/:name',
+    loadChildren: () =>
+      import('./routes/city-forecast/city-forecast.module').then(
         (m) => m.CityForecastModule
       ),
-  }
+  },
+  { path: '**', redirectTo: 'weather-forecast' }, // redirect to
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
