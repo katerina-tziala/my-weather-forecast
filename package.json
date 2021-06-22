@@ -10,7 +10,7 @@
     "watch": "npm run config -- --environment=dev && ng serve",
     "watch-server": "nodemon index.js",
     "test": "ng test",
-    "heroku-postbuild": "ng build --delete-output-path --optimization --aot --resources-output-path --source-map",
+    "heroku-postbuild": "npm run config -- --environment=prod && ng build --delete-output-path --optimization --aot --resources-output-path --source-map",
     "lint": "ng lint"
   },
   "private": true,

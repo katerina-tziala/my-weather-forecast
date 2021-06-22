@@ -28,7 +28,6 @@ export class WeatherForecastService {
 
   constructor(private http: HttpClient) {
     this.API_KEY = Env.WEATHER_API_KEY || ProdEnv.WEATHER_API_KEY;
-    this.API_KEY = "f566b6ca9f9485d189793e74e946268e";
   }
 
   private getURL(route: string): string {
