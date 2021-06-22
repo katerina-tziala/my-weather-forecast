@@ -105,6 +105,8 @@ The **_routes_** folder includes the modules for the routes f the app:
 
 - Add Git Hooks to enforce and ensure the selected coding conventions and the quality of the app (tests)
 
+- Set up CI/CD
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
