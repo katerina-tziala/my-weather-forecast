@@ -1,6 +1,7 @@
 {
   "name": "my-weather-forecast",
-  "version": "0.0.0",
+  "author": "Katerina Tziala",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "config": "ts-node setenv.ts",
@@ -9,7 +10,7 @@
     "watch": "npm run config -- --environment=dev && ng serve",
     "watch-server": "nodemon index.js",
     "test": "ng test",
-    "heroku-postbuild": "npm run build",
+    "heroku-postbuild": "ng build --delete-output-path --optimization --aot --resources-output-path --source-map",
     "lint": "ng lint"
   },
   "private": true,
