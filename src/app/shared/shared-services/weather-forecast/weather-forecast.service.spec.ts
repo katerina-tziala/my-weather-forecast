@@ -1,3 +1,4 @@
+import { environment } from 'src/environments/environment';
 import { CityForecast, LocationWeather } from './location-weather.interface';
 import { TestBed } from '@angular/core/testing';
 import { WeatherForecastService } from './weather-forecast.service';
@@ -11,7 +12,6 @@ import { HttpErrorResponse } from '@angular/common/http';
 
 const API_BASE_URL = 'https://api.openweathermap.org/data/2.5';
 const UNITS = 'metric';
-
 function getURL(route: string): string {
   return `${API_BASE_URL}${route}`;
 }
@@ -19,6 +19,7 @@ function getURL(route: string): string {
 function checkRequestParams(req: TestRequest, method = 'GET'): void {
   expect(req.request.method).toEqual(method);
   expect(req.request.params.get('units')).toEqual(UNITS);
+  expect(req.request.params.get('appid')).toEqual(environment.WEATHER_API_KEY)
 }
 
 describe('Service: WeatherForecast', () => {

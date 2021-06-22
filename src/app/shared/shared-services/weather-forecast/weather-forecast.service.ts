@@ -1,3 +1,4 @@
+import { environment } from 'src/environments/environment';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import {
@@ -18,12 +19,14 @@ import {
 })
 export class WeatherForecastService {
   private API = 'https://api.openweathermap.org/data/2.5';
-  private API_KEY = 'f566b6ca9f9485d189793e74e946268e';
+  private API_KEY = 'e';
   // TODO: allow the user to select the preferable units of measurement  for the weather data
   // (units=imperial --> Fahrenheit, units=metric --> Celsius, units=standard --> Kelvin)
   private units = 'metric';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.API_KEY = environment.WEATHER_API_KEY;
+  }
 
   private getURL(route: string): string {
     return `${this.API}${route}`;
