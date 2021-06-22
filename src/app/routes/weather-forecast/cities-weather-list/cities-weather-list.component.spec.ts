@@ -7,7 +7,7 @@ import { CitiesWeatherListModule } from './cities-weather-list.module';
 import { getSampleCitiesList } from 'src/app/shared/shared-services/weather-forecast/mock-data';
 import { RouterTestingModule } from '@angular/router/testing';
 
-fdescribe('Presentational Component: CitiesWeatherListComponent', () => {
+describe('Presentational Component: CitiesWeatherListComponent', () => {
   let component: CitiesWeatherListComponent;
   let fixture: ComponentFixture<CitiesWeatherListComponent>;
   let el: DebugElement;
