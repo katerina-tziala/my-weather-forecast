@@ -101,7 +101,7 @@ The **_routes_** folder includes the modules for the routes f the app:
 
   - Maintain the code quality with ease
 
-- Implement End to End Testing //city forecast, weather forecast
+- Implement End to End Testing
 
 - Add Git Hooks to enforce and ensure the selected coding conventions and the quality of the app (tests)
 
