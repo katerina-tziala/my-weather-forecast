@@ -6,7 +6,7 @@ import { WeatherDescription } from 'src/app/shared/shared-services/weather-forec
   styleUrls: ['./weather-description.component.scss'],
 })
 export class WeatherDescriptionComponent {
-  @Input() public weatherDescription: WeatherDescription[] = [];
+  @Input() public weatherDescription: WeatherDescription | null = null;
   private iconSize = '@4x';
   public iconExtension = this.iconSize + '.png';
   public iconSource = 'https://openweathermap.org/img/wn/';

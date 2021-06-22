@@ -22,7 +22,7 @@ export class CityForecastComponent {
     this.cityForecast$ = this.route.queryParams.pipe(
       switchMap(({ name }) => {
         if (name) {
-          return this.weatherForecast.getWeatherFoecastrCity(name);
+          return this.weatherForecast.getWeatherFoecastForCity(name);
         }
         this.router.navigateByUrl('/weather-forecast');
         return EMPTY;

@@ -1,13 +1,14 @@
 /* tslint:disable:no-unused-variable */
-import { ComponentFixture, TestBed, async } from '@angular/core/testing';
+import { ComponentFixture, TestBed, async, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { WeatherOverviewComponent } from './weather-overview.component';
 
-describe('WeatherOverviewComponent', () => {
+describe('Presentational Component: WeatherOverviewComponent', () => {
   let component: WeatherOverviewComponent;
   let fixture: ComponentFixture<WeatherOverviewComponent>;
+  let el: DebugElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({

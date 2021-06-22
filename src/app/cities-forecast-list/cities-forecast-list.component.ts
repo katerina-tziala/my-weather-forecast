@@ -11,19 +11,19 @@ import { catchError, switchMap } from 'rxjs/operators';
 })
 export class CitiesForecastListComponent {
   // TODO: allow user to select the cities and pass their ids
-  private selectedCities$: BehaviorSubject<string[]> = new BehaviorSubject([
-    '2759794',
-    '8133841',
-    '2761369',
-    '2267057',
-    '6542283',
+  private selectedCities$: BehaviorSubject<number[]> = new BehaviorSubject([
+    2759794,
+    8133841,
+    2761369,
+    2267057,
+    6542283,
   ]);
 
   public citiesForecast$: Observable<LocationWeather[]>;
 
   constructor(private weatherForecast: WeatherForecastService) {
     this.citiesForecast$ = this.selectedCities$.pipe(
-      switchMap((selectedCities: string[]) =>
+      switchMap((selectedCities: number[]) =>
         this.weatherForecast.getWeatherForCities(selectedCities)
       ),
       catchError((_) => of([]))

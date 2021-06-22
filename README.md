@@ -85,6 +85,8 @@ The ***shared*** folder includes the code that is shared among the two modules a
 
 - Implementation of a search field / typeahead dropdown checkbox list, to allow the user to select multiple cities in the *Weather Forecast Page*
 
+- Implementation of a dropdown select to allow the user select the preferable units of measurement  for the weather data (Celsius, Fahrenheit, Kelvin).
+
 - Convert it to a PWA app
   
   - Implementation of a Manifest to prompt users install the app when accessing it through their mobiles
@@ -101,7 +103,8 @@ The ***shared*** folder includes the code that is shared among the two modules a
 
 - Add Git Hooks to enforce and ensure the selected coding conventions and the quality of the app (tests)
   
-// 
+// es lint rules
+// city, weather overview, city forecast, daily prediction, city forecast list, loaders, error messages, manifest, app component routing
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).

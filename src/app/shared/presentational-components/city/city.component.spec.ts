@@ -1,28 +1,31 @@
 /* tslint:disable:no-unused-variable */
-import { ComponentFixture, TestBed, async } from '@angular/core/testing';
+import { ComponentFixture, TestBed, async, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { CityComponent } from './city.component';
+import { CityModule } from './city.module';
 
-describe('CityComponent', () => {
+fdescribe('Presentational Component: CityComponent', () => {
   let component: CityComponent;
   let fixture: ComponentFixture<CityComponent>;
+  let el: DebugElement;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ CityComponent ]
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        imports: [CityModule],
+      })
+        .compileComponents()
+        .then(() => {
+          fixture = TestBed.createComponent(CityComponent);
+          component = fixture.componentInstance;
+          el = fixture.debugElement;
+        });
     })
-    .compileComponents();
-  }));
+  );
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(CityComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
+  it('should create the component', () => {
     expect(component).toBeTruthy();
   });
 });

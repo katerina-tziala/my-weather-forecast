@@ -7,4 +7,4 @@ import { TemperatureComponent } from './temperature.component';
   declarations: [TemperatureComponent],
   exports: [TemperatureComponent],
 })
-export class TemperatureComponentModule {}
+export class TemperatureModule {}

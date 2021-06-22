@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpParams,
+  HttpParamsOptions,
+} from '@angular/common/http';
 import { map, pluck } from 'rxjs/operators';
 import {
   CityForecast,
@@ -8,38 +12,32 @@ import {
   DailyForecast,
   LocationWeather,
 } from './location-weather.interface';
+
 @Injectable({
   providedIn: 'root',
 })
 export class WeatherForecastService {
-  private API_BASE = 'https://api.openweathermap.org/data/2.5/';
-  private API_KEY = '&appid=f566b6ca9f9485d189793e74e946268e';
-  private WEATHER_UNITS = '&units=metric';
+  private API = 'https://api.openweathermap.org/data/2.5';
+  private API_KEY = 'f566b6ca9f9485d189793e74e946268e';
+  // TODO: allow the user to select the preferable units of measurement  for the weather data
+  // (units=imperial --> Fahrenheit, units=metric --> Celsius, units=standard --> Kelvin)
+  private units = 'metric';
 
   constructor(private http: HttpClient) {}
 
-  private getURL(queryParams: string): string {
-    return `${this.API_BASE}${queryParams}${this.WEATHER_UNITS}${this.API_KEY}`;
+  private getURL(route: string): string {
+    return `${this.API}${route}`;
   }
 
-  getWeatherForCities(citiesIds: string[]): Observable<LocationWeather[]> {
-    const ids = citiesIds.join(',');
-    const queryParams = `group?id=${ids}`;
-    const url = this.getURL(queryParams);
-    return this.http.get(url).pipe(pluck('list'));
-  }
-
-  getWeatherFoecastrCity(cityName: string): Observable<CityForecast> {
-    const queryParams = `forecast?q=${cityName}`;
-    const url = this.getURL(queryParams);
-    return this.http.get<CityForecast>(url).pipe(
-      map((results: CityForecast) => {
-        const { city, list } = results;
-         const weatherForecast = this.mapForecastPerDay(list || []);
-         const cityForecast: CityForecast = { city, weatherForecast };
-         return cityForecast;
-      })
-    );
+  private fetchWeatherData<T>(
+    route: string,
+    options: HttpParamsOptions
+  ): Observable<T> {
+    const url = this.getURL(route);
+    const params = new HttpParams(options)
+      .set('units', this.units)
+      .set('appid', this.API_KEY);
+    return this.http.get<T>(url, { params });
   }
 
   private mapForecastPerDay(list: CityListItemForecast[]): DailyForecast[] {
@@ -68,5 +66,28 @@ export class WeatherForecastService {
       forecastPerDay.set(day, forecastInDay);
     });
     return forecastPerDay;
+  }
+
+  public getWeatherFoecastForCity(cityName: string): Observable<CityForecast> {
+    const route = '/forecast';
+    const params: HttpParamsOptions = { fromObject: { q: cityName } };
+
+    return this.fetchWeatherData<CityForecast>(route, params).pipe(
+      map((results: CityForecast) => {
+        const { city, list } = results;
+        const weatherForecast = this.mapForecastPerDay(list || []);
+        const cityForecast: CityForecast = { city, weatherForecast };
+        return cityForecast;
+      })
+    );
+  }
+
+  public getWeatherForCities(
+    citiesIds: number[]
+  ): Observable<LocationWeather[]> {
+    const route = '/group';
+    const id = citiesIds.join(',');
+    const params: HttpParamsOptions = { fromObject: { id } };
+    return this.fetchWeatherData(route, params).pipe(pluck('list'));
   }
 }

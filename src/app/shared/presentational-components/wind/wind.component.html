@@ -1,8 +1,6 @@
-<div class="h-full flex flex-col justify-between">
-  <div class="wind-icon p-2 m-auto">
-    <img src="assets/svg/wind.svg" />
-  </div>
-  <p *ngIf="!!wind" class="text-center text-base pt-2">
-    {{ wind.speed }} m/s
-  </p>
+<div class="wind-icon m-auto">
+  <img src="assets/svg/wind.svg" alt="wind icon" class="p-4" />
 </div>
+<p *ngIf="!!wind" class="wind-speed text-center text-base pb-2">
+  {{ wind.speed }} m/s
+</p>

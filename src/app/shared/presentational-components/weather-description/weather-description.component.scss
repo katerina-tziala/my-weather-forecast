@@ -1,3 +1,8 @@
+:host {
+  display: block;
+  @apply h-full flex flex-col justify-between;
+}
+
 .weather-icon {
   width: 65px;
   height: 65px;

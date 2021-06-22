@@ -1,11 +1,11 @@
-<div *ngFor="let condition of weatherDescription" class="h-full flex">
-  <div class="inline-block">
-    <div
-      class="weather-icon m-auto"
-      [style.background-image]="
-        'url(' + iconSource + condition.icon + iconExtension + ')'
-      "
-    ></div>
-    <p class="text-center text-base pb-1.5 pr-1.5 pl-1.5">{{ condition.main }}</p>
-  </div>
-</div>
+<ng-container *ngIf="!!weatherDescription">
+  <div
+    class="weather-icon m-auto"
+    [style.background-image]="
+      'url(' + iconSource + weatherDescription.icon + iconExtension + ')'
+    "
+  ></div>
+  <p class="weather-title text-center text-base pb-2">
+    {{ weatherDescription.main }}
+  </p>
+</ng-container>
