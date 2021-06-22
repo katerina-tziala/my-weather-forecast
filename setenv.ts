@@ -16,12 +16,6 @@ export const environment = {
    WEATHER_API_KEY: "${process.env.WEATHER_API_KEY}",
 };
 `;
-
-console.log(process.env);
-
-
-
-
 // write the content to the respective file
 writeFile(targetPath, environmentFileContent, (err: any) => {
    if (err) {
