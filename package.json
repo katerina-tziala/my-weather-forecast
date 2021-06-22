@@ -5,11 +5,11 @@
     "ng": "ng",
     "config": "ts-node setenv.ts",
     "start": "node server.js",
-    "build": "npm run config --environment=prod && ng build --delete-output-path --optimization --aot --resources-output-path --source-map",
+    "build": "npm run config -- --environment=prod && ng build --delete-output-path --optimization --aot --resources-output-path --source-map",
     "watch": "npm run config -- --environment=dev && ng serve",
     "watch-server": "nodemon index.js",
     "test": "ng test",
-    "heroku-postbuild": "npm run config --environment=prod && ng build --delete-output-path --optimization --aot --resources-output-path --source-map",
+    "heroku-postbuild": "npm run build",
     "lint": "ng lint"
   },
   "private": true,

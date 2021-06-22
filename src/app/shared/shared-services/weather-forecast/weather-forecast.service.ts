@@ -1,4 +1,6 @@
-import { environment } from 'src/environments/environment.prod';
+import { environment as Env } from 'src/environments/environment';
+import { environment as ProdEnv } from 'src/environments/environment.prod';
+
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import {
@@ -25,7 +27,7 @@ export class WeatherForecastService {
   private units = 'metric';
 
   constructor(private http: HttpClient) {
-    this.API_KEY = environment.WEATHER_API_KEY;
+    this.API_KEY = Env.WEATHER_API_KEY || ProdEnv.WEATHER_API_KEY;
   }
 
   private getURL(route: string): string {
