@@ -1,4 +1,4 @@
-# <img src="https://github.com/katerina-tziala/my-weather-forecast/blob/master/logo.png" alt="app logo" width="44" height="44" align="left">My Weather Forecast
+# <img src="https://github.com/katerina-tziala/my-weather-forecast/blob/master/src/assets/logo/android-chrome-192x192.png" alt="app logo" width="44" height="44" align="left">My Weather Forecast
 
 A Single Page Application for displaying the weather forecast utilizing the [OpenWeather API](https://openweathermap.org/api).
 </br>Access the app here: [My Weather Forecast](https://my-weather-forecast-demo.herokuapp.com/).
