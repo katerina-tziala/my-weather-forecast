@@ -68,7 +68,7 @@ export class WeatherForecastService {
     return forecastPerDay;
   }
 
-  public getWeatherFoecastForCity(cityName: string): Observable<CityForecast> {
+  public getWeatherForecastForCity(cityName: string): Observable<CityForecast> {
     const route = '/forecast';
     const params: HttpParamsOptions = { fromObject: { q: cityName } };
 

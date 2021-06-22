@@ -69,7 +69,6 @@ To run the app that is ready for production run:
 npm start
 ```
 
-
 ## App Architecture
 
 This app has two main routes **_weather-forecast_** abd **_weather-forecast/city_**. For each route the respective module is loaded when required, thus achieving lazy load. It is also easier that way to extend each module separately, by adding features, subroutes, etc.
@@ -83,7 +82,6 @@ The **_routes_** folder includes the modules for the routes f the app:
 
 - **weather forecast**: The module to display the list of the selected cities with the current weather overview.This module is used as the main module of the app.
 - **city-forecast**: The module to display the weather forecast of the selected city. This module has also an extra presentational component (daily-forecast) which is responsible for displaying the list of the weather forecast of each day. Since this component is not used elsewhere, it is placed under this folder.
-
 
 ## Future Improvements
 
@@ -103,16 +101,9 @@ The **_routes_** folder includes the modules for the routes f the app:
 
   - Maintain the code quality with ease
 
-- Unit and End to End Testing
+- Implement End to End Testing //city forecast, weather forecast
 
 - Add Git Hooks to enforce and ensure the selected coding conventions and the quality of the app (tests)
-
-
-
-
-// es lint rules
-
-//city forecast
 
 ## Running unit tests
 

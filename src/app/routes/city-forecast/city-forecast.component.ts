@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, EMPTY } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 import { CityForecast } from 'src/app/shared/shared-services/weather-forecast/location-weather.interface';
 import { WeatherForecastService } from 'src/app/shared/shared-services/weather-forecast/weather-forecast.service';
 
@@ -15,13 +15,12 @@ export class CityForecastComponent {
 
   constructor(
     private route: ActivatedRoute,
-    private weatherForecast: WeatherForecastService
+    private weatherForecastService: WeatherForecastService
   ) {
     const { name } = this.route.snapshot.params;
-    this.cityForecast$ = this.weatherForecast
-      .getWeatherFoecastForCity(name)
+    this.cityForecast$ = this.weatherForecastService
+      .getWeatherForecastForCity(name)
       .pipe(
-        map((cityForecast: CityForecast) => cityForecast),
         catchError((_) => EMPTY)
       );
   }

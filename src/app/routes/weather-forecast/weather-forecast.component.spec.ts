@@ -86,7 +86,4 @@ describe('WeatherForecastComponent', () => {
     expect(noDataMessage).toBeTruthy();
   });
 
-  it('should display data correctly when new emition - fakeAsync', fakeAsync(() => {
-    pending();
-  }));
 });

@@ -88,7 +88,7 @@ describe('Service: WeatherForecast', () => {
     const cityName = 'Amsterdam';
 
     weatherForecastService
-      .getWeatherFoecastForCity(cityName)
+      .getWeatherForecastForCity(cityName)
       .subscribe((cityForecast: CityForecast) => {
         expect(cityForecast).toBeTruthy();
         expect(cityForecast.city.name).toBe(cityName);
