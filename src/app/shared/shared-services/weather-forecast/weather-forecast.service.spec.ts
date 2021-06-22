@@ -10,7 +10,6 @@ import { findCityForecastByName, findWeatherForCities } from './mock-data';
 import { HttpErrorResponse } from '@angular/common/http';
 
 const API_BASE_URL = 'https://api.openweathermap.org/data/2.5';
-const API_KEY = 'f566b6ca9f9485d189793e74e946268e';
 const UNITS = 'metric';
 
 function getURL(route: string): string {
@@ -20,7 +19,6 @@ function getURL(route: string): string {
 function checkRequestParams(req: TestRequest, method = 'GET'): void {
   expect(req.request.method).toEqual(method);
   expect(req.request.params.get('units')).toEqual(UNITS);
-  //expect(req.request.params.get('appid')).toEqual(API_KEY);
 }
 
 describe('Service: WeatherForecast', () => {

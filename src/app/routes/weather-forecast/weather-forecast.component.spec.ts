@@ -1,10 +1,6 @@
 import {
   ComponentFixture,
-  fakeAsync,
-  flush,
-  flushMicrotasks,
   TestBed,
-  tick,
   waitForAsync,
 } from '@angular/core/testing';
 import { DebugElement } from '@angular/core';

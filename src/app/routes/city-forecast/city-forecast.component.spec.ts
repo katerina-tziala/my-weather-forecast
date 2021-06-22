@@ -1,19 +1,9 @@
 import {
   ComponentFixture,
-  fakeAsync,
-  flush,
-  flushMicrotasks,
   TestBed,
-  tick,
   waitForAsync,
 } from '@angular/core/testing';
 import { DebugElement } from '@angular/core';
-import {
-  HttpClientTestingModule,
-  HttpTestingController,
-} from '@angular/common/http/testing';
-
-import { HttpClient } from '@angular/common/http';
 import { By } from '@angular/platform-browser';
 import { of } from 'rxjs';
 
@@ -21,15 +11,14 @@ import { WeatherForecastService } from 'src/app/shared/shared-services/weather-f
 
 import {
   findCityForecastByName,
-  getSampleCitiesList,
 } from 'src/app/shared/shared-services/weather-forecast/mock-data';
 import { RouterTestingModule } from '@angular/router/testing';
-import { CitiesWeatherListComponent } from '../weather-forecast/cities-weather-list/cities-weather-list.component';
 import { CityForecastComponent } from './city-forecast.component';
 import { CityForecastModule } from './city-forecast.module';
-import { ActivatedRoute, Data } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { CityComponent } from 'src/app/shared/presentational-components/city/city.component';
 
-xdescribe('CityForecastComponent', () => {
+describe('CityForecastComponent', () => {
   let fixture: ComponentFixture<CityForecastComponent>;
   let component: CityForecastComponent;
   let el: DebugElement;
@@ -38,10 +27,11 @@ xdescribe('CityForecastComponent', () => {
 
   beforeEach(
     waitForAsync(() => {
-      const weatherServiceSpy = jasmine.createSpyObj('WeatherForecastService', [
+      weatherService = jasmine.createSpyObj('WeatherForecastService', [
         'getWeatherForecastForCity',
       ]);
       weatherService.getWeatherForecastForCity.and.returnValue(of(findCityForecastByName('Amsterdam')));
+
       TestBed.configureTestingModule({
         imports: [
           CityForecastModule,
@@ -60,7 +50,7 @@ xdescribe('CityForecastComponent', () => {
               },
             },
           },
-          { provide: WeatherForecastService, useValue: weatherServiceSpy },
+          { provide: WeatherForecastService, useValue: weatherService },
         ],
       })
         .compileComponents()
@@ -71,19 +61,22 @@ xdescribe('CityForecastComponent', () => {
           fixture = TestBed.createComponent(CityForecastComponent);
           component = fixture.componentInstance;
           el = fixture.debugElement;
-
-
-
         });
 
     })
   );
 
   it('should create the component', () => {
-
-    //fixture.detectChanges();
     expect(component).toBeTruthy();
   });
 
+  it('should load the data of the selected city', () => {
+    fixture.detectChanges();
 
+    const cityComponent = fixture.debugElement.query(
+      By.directive(CityComponent)
+    );
+
+    expect(cityComponent.nativeElement.innerHTML).toMatch('Amsterdam');
+  });
 });
