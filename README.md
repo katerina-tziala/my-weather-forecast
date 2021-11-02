@@ -33,15 +33,7 @@ Here’s a high level list of the technologies used for this app:
 
 2. To install the dependencies of the app, run in this directory:
 
-   ```
-   npm install
-   ```
-
-   or
-
-   ```
-   npm i
-   ```
+   ``` npm install ```  or  ``` npm i  ```
 
 3. To start the app, run in the project directory:
 
