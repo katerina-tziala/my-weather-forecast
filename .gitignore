@@ -3,6 +3,7 @@
 .env
 .environment.prod.ts
 .environment.ts
+package-lock.json
 
 # compiled output
 /tmp
@@ -46,4 +47,4 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-.env
+
