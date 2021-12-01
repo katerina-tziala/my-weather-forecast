@@ -1,6 +1,11 @@
 #  <img src="https://github.com/katerina-tziala/my-weather-forecast/blob/master/readme-logo.png" alt="app logo" width="44" height="44" align="left">My Weather Forecast
 
 A Single Page Application for displaying the weather forecast utilizing the [OpenWeather API](https://openweathermap.org/api).
+
+<p align="center">
+    <img src="https://github.com/katerina-tziala/my-weather-forecast/blob/master/weather-forecast.png" alt="restaurant reviews layout" width="100%" height="auto">
+</p>
+
 </br>Access the app here: [My Weather Forecast](https://my-weather-forecast-demo.herokuapp.com/).
 
 ## Technologies
