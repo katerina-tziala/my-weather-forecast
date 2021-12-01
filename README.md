@@ -6,7 +6,7 @@ A Single Page Application for displaying the weather forecast utilizing the [Ope
     <img src="https://github.com/katerina-tziala/my-weather-forecast/blob/master/my-weather-foreccast-overview.png" alt="my weather forecast overview" width="80%" height="auto">
 </p>
 
-</br>Access the app here: [My Weather Forecast](https://my-weather-forecast-demo.herokuapp.com/).
+Access the app here: [My Weather Forecast](https://my-weather-forecast-demo.herokuapp.com/).
 
 ## Technologies
 
