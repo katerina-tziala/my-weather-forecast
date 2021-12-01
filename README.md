@@ -31,15 +31,9 @@ Here’s a high level list of the technologies used for this app:
 
 1. Fork and clone this repository
 
-2. To install the dependencies of the app, run in this directory:
+2. To install the dependencies of the app, run in this directory: ``` npm install ```  or  ``` npm i  ```
 
-   ``` npm install ```  or  ``` npm i  ```
-
-3. To start the app, run in the project directory:
-
-   ```
-   ng serve
-   ```
+3. To start the app, run in the project directory: ``` ng serve  ```
 
 4. Access the app locally at: http://localhost:4200/
 
@@ -55,11 +49,7 @@ Run `ng lint` to lint the project and enforce the applied coding styles
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. The production build of the app is included in the `dist/app` directory.
 
-To run the app that is ready for production run:
-
-```
-npm start
-```
+To run the app that is ready for production run: ``` npm start ```
 
 ## App Architecture
 
