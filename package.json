@@ -23,10 +23,6 @@
   ],
   "author": "Katerina Tziala",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/katerina-tziala/my-weather-forecast/issues"
-  },
-  "homepage": "https://github.com/katerina-tziala/my-weather-forecast#readme",
   "private": true,
   "dependencies": {
     "@angular/animations": "~12.0.4",
