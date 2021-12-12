@@ -58,7 +58,7 @@ To run the app that is ready for production run: ``` npm start ```
 
 ## App Architecture
 
-This app has two main routes **_weather-forecast_** abd **_weather-forecast/city_**. For each route the respective module is loaded when required, thus achieving lazy load. It is also easier that way to extend each module separately, by adding features, subroutes, etc.
+This app has two main routes **_weather-forecast_** and **_weather-forecast/city_**. For each route the respective module is loaded when required, thus achieving lazy load. It is also easier that way to extend each module separately, by adding features, subroutes, etc.
 
 The **_shared_** folder includes the code that is shared among the two modules and has two subfolders:
 
