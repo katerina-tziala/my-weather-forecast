@@ -6,8 +6,6 @@ A Single Page Application for displaying the weather forecast utilizing the [Ope
     <img src="https://github.com/katerina-tziala/my-weather-forecast/blob/master/my-weather-forecast-overview.png" alt="my weather forecast overview" width="80%" height="auto">
 </p>
 
-Access the app here: [My Weather Forecast](https://my-weather-forecast-demo.herokuapp.com/).
-
 ## Technologies
 
 Here’s a high level list of the technologies used for this app:
@@ -18,7 +16,6 @@ Here’s a high level list of the technologies used for this app:
 
 - **NodeJS and Express**: For the development of a simple server to serve static files
 
-- **[Heroku](https://www.heroku.com)**: A cloud platform to deploy the app on the internet
 
 ## Features
 
